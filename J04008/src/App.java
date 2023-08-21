@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import static java.lang.Math.*;
+
+import java.text.DecimalFormat;
 class Point{
     public double x,y;
 
@@ -43,13 +45,21 @@ public class App {
     static Scanner sc = new Scanner(System.in);
 
     public static void Solve(){
-        double x = sc.nextDouble();
-        double y = sc.nextDouble();
-        Point a = new Point(x, y);
-        x = sc.nextDouble();
-        y = sc.nextDouble();
-        Point b = new Point(x, y);
-        System.out.printf("%.4f\n", a.distance(b));
+        Point[] arr = new Point[3];
+            for (int i = 0; i < 3; i++) {
+                double x = sc.nextDouble();
+                double y = sc.nextDouble();
+                arr[i] = new Point(x, y);
+            }
+            double a = arr[0].distance(arr[1]);
+            double b = arr[1].distance(arr[2]);
+            double c = arr[0].distance(arr[2]);
+            DecimalFormat decf = new DecimalFormat("#0.000");
+            if (a + b > c && b + c > a && a + c > b) {
+                System.out.println(decf.format(a+b+c));
+            } else {
+                System.out.println("INVALID");
+            }
     }
 
     public static void main(String[] args) throws Exception {
