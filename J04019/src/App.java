@@ -69,15 +69,4 @@ public class App {
             }
         }
     }
-    public static void main567009(String[] args) {
-        int t = sc.nextInt();
-        while (t-- > 0) {
-            Triangle a = new Triangle(Point.nextPoint(sc), Point.nextPoint(sc), Point.nextPoint(sc));
-            if (!a.valid()) {
-                System.out.println("INVALID");
-            } else {
-                System.out.println(a.getPerimeter());
-            }
-        }
-    }
 }
