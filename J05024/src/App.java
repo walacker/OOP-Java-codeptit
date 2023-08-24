@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 class Student{
@@ -17,6 +15,7 @@ class Student{
     public String getClasses(){
         return classes;
     }
+
     public String getCode(){
         return code;
     }
@@ -32,7 +31,7 @@ class Student{
 
 }
 
-public class App {
+public class App{
     static Scanner sc = new Scanner(System.in);
 
     public static void Solve(){
