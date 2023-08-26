@@ -5,7 +5,11 @@ import java.util.Scanner;
 public class App {
     static Scanner sc = new Scanner(System.in);
     
-    public static void init(){
+    public static void main(String[] args) throws Exception {
+        init();
+    }
+    
+    private static void init(){
         int n = 1000;
         boolean[] check = new boolean[n+1];
         for (int i = 2; i <= n; i++) {
@@ -27,7 +31,4 @@ public class App {
           }else if(dem > 50) return;
         }
     }
-    public static void main(String[] args) throws Exception {
-        init();
-      }
 }
