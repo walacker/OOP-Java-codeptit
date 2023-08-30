@@ -52,7 +52,7 @@ class Employee{
 
     @Override
     public String toString() {
-        return this.id + " " + this.getHours();
+        return this.id + " " + this.getHours() + " hours";y
     }
 }
 

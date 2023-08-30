@@ -10,7 +10,7 @@ class App {
         for (int i = 0; i < array.length; i++) {
             array[i] = sc.nextDouble();
         }
-        System.out.println(indexOfLargestElement(array));
+        System.out.println("element number " + indexOfLargestElement(array) + " " + array[indexOfLargestElement(array)]);
     }
     
     private static int indexOfLargestElement(double[] array) {

@@ -23,12 +23,10 @@ public class App {
             }
           }
         }
-        int dem = 0 ;
-        for (int i = 2; i <= n; i++) {
-          if (check[i] == true && dem <= 50) {
-                dem++;
+        for (int i = 2; i <= 50; i++) {
+          if (check[i] == true) {
                 System.out.print(i + " ");
-          }else if(dem > 50) return;
+          }
         }
     }
 }

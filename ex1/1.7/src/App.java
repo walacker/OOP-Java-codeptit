@@ -18,14 +18,15 @@ class App {
     }
 
     private static void display(int[] a){
-        System.out.println("odd array: ");
+        int dem = 0 ;
         for(int i = 0 ; i < 10 ; i++){
-            if(a[i] % 2 == 0 ) System.out.printf("%d ", a[i]);
+            if(a[i] % 2 == 0 ) dem++;
         }
-        System.out.println();
-        System.out.println("even array:");
+        System.out.println("even number: " + dem);
+        dem = 0 ;
         for(int i = 0 ; i < 10; i++){
-            if(a[i] % 2 != 0 ) System.out.printf("%d ", a[i]);
+            if(a[i] % 2 != 0 ) dem++;
         }
+        System.out.println("odd number: " + dem);
     }
 }
