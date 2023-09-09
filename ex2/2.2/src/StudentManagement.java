@@ -4,6 +4,7 @@ import java.util.*;
 public class StudentManagement {
     static Scanner sc = new Scanner(System.in);
     static List<Student> list = new ArrayList<Student>();
+    static int count = 1;
 
     public static void main(String[] args) {
         int chon;
@@ -78,6 +79,7 @@ public class StudentManagement {
         for (int i = 0; i < n; i++) {
             System.out.println("Nhap thong tin sinh vien thu " + (i + 1));
             list.add(Student.getStudent(sc));
+            list.get(i).setID(count++);
         }
         System.out.println("Danh sach sinh vien vua nhap la: ");
         list.forEach(System.out::println);
@@ -109,10 +111,17 @@ public class StudentManagement {
         list.stream().filter(s -> (s.getId().equals(res))).forEach(System.out::println);
         System.out.println("Ban muon sua thong tin sinh vien khong (Y/N)");
         String request = sc.nextLine();
+        int point = 0;
         if (request.equals("Y")) {
             System.out.println("Nhap thong tin sinh vien moi: ");
-            list.set(res - 1, Student.getstudent(sc));
+            for(Student s : list){
+                if(s.getId().equals(res)){
+                    point = list.indexOf(s);
+                    list.set(list.indexOf(s),Student.getstudent(sc));
+                }
+            }
         }
+        list.get(point).setID(res);
         System.out.println("Thong tin sinh vien sau khi cap nhat la: ");
         list.forEach(System.out::println);
     }
@@ -146,13 +155,12 @@ class Student {
     private String name, course;
     private Double mark;
     private int id;
-    public static int count = 1;
 
     public Student(String name, String course, Double mark) {
         this.name = name;
         this.course = course;
         this.mark = mark;
-        this.id = count++;
+        this.id = 0;
     }
 
     public static Student getStudent(Scanner sc) {
@@ -191,8 +199,16 @@ class Student {
         return this.id;
     }
 
+    public void setID(int id) {
+        this.id = id;
+    }
+
+    public String toID(){
+        return String.format("SV%02d",this.id);
+    }
     @Override
     public String toString() {
-        return "Ten: " + name + "\nKhoa: " + course + "\n Diem: " + mark;
+        return "MSV: " + toID() + "\nTen: " + name + "\nKhoa: " + course + "\nDiem: " + mark;
     }
 }
+
