@@ -31,7 +31,7 @@ class Staff{
 public class App {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        String name = sc.nextLine();
+        String name = sc.nextLine()
         String sex = sc.nextLine();
         String dob = sc.nextLine();   
         String adr = sc.nextLine();

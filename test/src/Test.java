@@ -98,7 +98,7 @@ public class Test {
                 studentList.add(student);
             }
         } catch (Exception e) {
-            System.out.println("duc ngu vcl");
+            System.out.println("Wrong input");
             System.out.println(e);
         }
     }
@@ -132,7 +132,7 @@ public class Test {
             }
 
         } catch (Exception e) {
-            System.out.println("duc ngu vcl");
+            System.out.println("Wrong input");
             System.out.println(e);
         }
     }
@@ -148,21 +148,17 @@ public class Test {
             Course course = new Course(id, s, credit, studentList, facultiesList);
             courseList.add(course);
         } catch (Exception e) {
-            System.out.println("duc ngu vcl");
+            System.out.println("Wrong input");
             System.out.println(e);
         }
     }
 
     static void viewStudentList() {
-        for (Student student : studentList) {
-            System.out.println(student.getInfo());
-        }
+        studentList.forEach(System.out::println);
     }
 
     static void viewTeacherList() {
-        for (Faculty faculty : facultiesList) {
-            System.out.println(faculty.getInfo());
-        }
+        facultiesList.forEach(System.out::println);
     }
 
     static void viewCourseList() {
@@ -185,7 +181,7 @@ public class Test {
                 }
             }
         } catch (Exception e) {
-            System.out.println("duc ngu vcl");
+            System.out.println("Wrong input");
             System.out.println(e);
         }
     }
@@ -206,7 +202,7 @@ public class Test {
                 }
             }
         } catch (Exception e) {
-            System.out.println("duc ngu vcl");
+            System.out.println("Wrong input");
             System.out.println(e);
         }
 

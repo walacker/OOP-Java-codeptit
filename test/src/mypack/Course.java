@@ -56,6 +56,12 @@ public class Course {
         this.facultiesList = facultieslist;
     }
 
+    public void updateCourse(String id, String name, Integer credit) {
+        this.setId(id);
+        this.setName(name);
+        this.setCredit(credit);
+    }
+
     public void addStudenttoCourse(Student student) {
         this.studentList.add(student);
     }
@@ -72,11 +78,11 @@ public class Course {
         sb.append("Course Credits:").append(this.credit).append("\n");
         sb.append("Student Enrolled:\n");
         for (Student student : studentList) {
-            sb.append(" - ").append(student.getInfo() + "\n");
+            sb.append(" - ").append(student + "\n");
         }
         sb.append("Teacher for the Course:\n");
         for (Faculty faculty : facultiesList) {
-            sb.append(" - ").append(faculty.getInfo() + "\n");
+            sb.append(" - ").append(faculty + "\n");
         }
         return sb.toString();
     }

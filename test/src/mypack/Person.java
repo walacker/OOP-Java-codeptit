@@ -1,13 +1,14 @@
 package mypack;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Person {
     static Scanner sc = new Scanner(System.in);
     protected String id;
-    private String phone;
-    private Name name;
-    private Address address;
+    public String phone;
+    public Name name;
+    public Address address;
+    List<Course> coursesList = new ArrayList<>();
 
     public Person(String id, Name name, String phone, Address address) {
         this.id = id;
@@ -48,10 +49,10 @@ public class Person {
         this.address = address;
     }
 
-    public String getInfo(){
-        return id + " " + name + " " + phone + " " + address ;
+    public void addCourse(Course course) {
+        this.coursesList.add(course);
     }
-
+    
     @Override
     public String toString() {
         return "Person [id=" + id + ", phone=" + phone + ", name=" + name + ", address=" + address + "]";

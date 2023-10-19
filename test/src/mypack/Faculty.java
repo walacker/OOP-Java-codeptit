@@ -16,4 +16,16 @@ public class Faculty extends Person {
         this.job = job;
     }
 
+    public void updateTeachcer(String id,Name name,String job,String phone, Address address) {
+        super.setId(id);
+        super.setName(name);
+        this.setJob(job);
+        super.setPhone(phone);
+        super.setAddress(address);
+    }
+
+    @Override 
+    public String toString(){
+        return super.id + " " + super.name + " " + this.job + " " + super.phone + " " + super.address ;
+    }
 }
